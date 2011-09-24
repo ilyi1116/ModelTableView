@@ -37,6 +37,8 @@ CGFloat const kUITableViewEAScale = 0.9;
 #pragma mark Move Row
 
 - (void)moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    
+    self.userInteractionEnabled = NO;
 
 	UIView *backgroundDimView = [[UIView alloc] initWithFrame:self.bounds];
 	[backgroundDimView setBackgroundColor:[UIColor blackColor]];
@@ -98,6 +100,8 @@ CGFloat const kUITableViewEAScale = 0.9;
 #pragma mark Transit Row
 
 - (void)transitRowAtIndexPath:(NSIndexPath *)fromIndexPath toRowIndexPath:(NSIndexPath *)toIndexPath {
+    
+    self.userInteractionEnabled = NO;
 	
 	UIView *backgroundDimView = [[UIView alloc] initWithFrame:self.bounds];
 	[backgroundDimView setBackgroundColor:[UIColor blackColor]];
@@ -172,6 +176,9 @@ CGFloat const kUITableViewEAScale = 0.9;
 #pragma mark Exchange Row
 
 - (void)exchangeRowAtIndexPath:(NSIndexPath *)indexPath1 withRowAtIndexPath:(NSIndexPath *)indexPath2 {
+    
+    self.userInteractionEnabled = NO;
+    
 	CGRect cell1SourceFrame = [self rectForRowAtIndexPath:indexPath1];
 	CGRect cell2SourceFrame = [self rectForRowAtIndexPath:indexPath2];
 	
@@ -221,8 +228,8 @@ CGFloat const kUITableViewEAScale = 0.9;
 	[backgroundDimView release];
 	
 	[self reloadData];
-	
-	[self setNeedsLayout];
+    
+    self.userInteractionEnabled = YES;
 }
 
 @end

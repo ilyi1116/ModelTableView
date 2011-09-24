@@ -11,6 +11,7 @@
 #import "OtherSamplesViewController.h"
 #import "AnimationViewController.h"
 #import "CellSamplesViewController.h"
+#import "BFTableTransitionsExample.h"
 
 @implementation OtherSamplesViewController
 
@@ -59,6 +60,11 @@
                                                                   detailText:@"Спагетти из ячеек" 
                                                                       target:self 
                                                                       action:@selector(pushCellSamples:)]];
+    [section addCellInfo:[YXDetailDisclosureCellInfo cellWithReuseIdentifier:@"detailDisclosureCell" 
+                                                                       title:@"Transitions" 
+                                                                  detailText:@"Cells are flying around" 
+                                                                      target:self 
+                                                                      action:@selector(transitionsSample:)]];
     [self insertSection:section 
              atPosition:YXSectionInsertionPositionTop 
           withAnimation:UITableViewRowAnimationTop];
@@ -77,5 +83,13 @@
     [[self navigationController] pushViewController:cellSamplesViewController animated:YES];
     [cellSamplesViewController release];
 }
+
+- (void)transitionsSample:(YXCellInfo *)cellInfo {
+    BFTableTransitionsExample *transitionsSamplesViewController = [[BFTableTransitionsExample alloc] initWithStyle:UITableViewStylePlain];
+	[transitionsSamplesViewController setStyleInfo:self.styleInfo];
+    [[self navigationController] pushViewController:transitionsSamplesViewController animated:YES];
+    [transitionsSamplesViewController release];
+}
+
 
 @end

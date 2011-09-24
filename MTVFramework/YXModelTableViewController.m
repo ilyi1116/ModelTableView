@@ -347,14 +347,36 @@
 - (void)tableView:(UITableView *)tableView 
 	 exchangeCell:(UITableViewCell *)cell1 atIndexPath:(NSIndexPath *)indexPath1 
 		 withCell:(UITableViewCell *)cell2 atIndexPath:(NSIndexPath *)indexPath2 {
-	
+    YXCellInfo *cellInfo1 = [[[self cellInfoAtIndexPath:indexPath1] retain] autorelease];
+    YXCellInfo *cellInfo2 = [[[self cellInfoAtIndexPath:indexPath2] retain] autorelease];
+    
+    YXSectionInfo *sectionInfo1 = cellInfo1.sectionInfo;
+    YXSectionInfo *sectionInfo2 = cellInfo2.sectionInfo;
+    
+    NSUInteger cellInfo1Index = [sectionInfo1.cells indexOfObject:cellInfo1];
+    NSUInteger cellInfo2Index = [sectionInfo2.cells indexOfObject:cellInfo2];
+    
+    [sectionInfo1 transitionWantsToRemoveCellInfo:cellInfo1];
+    [sectionInfo2 transitionWantsToRemoveCellInfo:cellInfo2];
+    
+    [sectionInfo2 insertTransitionCellInfo:cellInfo2 atIndex:cellInfo1Index];
+    [sectionInfo1 insertTransitionCellInfo:cellInfo1 atIndex:cellInfo2Index];
+    
+    [cellInfo1 configureCell:cell2];
+    [cellInfo2 configureCell:cell1];
 }
 
 - (void)tableView:(UITableView *)tableView 
 		 moveCell:(UITableViewCell *)cell 
 	fromIndexPath:(NSIndexPath *)fromIndexPath 
 	  toIndexPath:(NSIndexPath *)toIndexPath {
-	
+	YXCellInfo *movedCellInfo = [[[self cellInfoAtIndexPath:fromIndexPath] retain] autorelease];
+    
+    YXSectionInfo *fromSectionInfo = [self.sections objectAtIndex:fromIndexPath.section];
+    YXSectionInfo *toSectionInfo = [self.sections objectAtIndex:toIndexPath.section];
+    
+    [fromSectionInfo transitionWantsToRemoveCellInfo:movedCellInfo];
+    [toSectionInfo insertTransitionCellInfo:movedCellInfo atIndex:toIndexPath.row];
 }
 
 - (void)tableView:(UITableView *)tableView transitionDeletedCellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -556,6 +578,19 @@ didRemoveCellInfo:(YXCellInfo *)cellInfo
 	
 	[self.tableView scrollRectToVisible:targetSectionRect animated:YES];
 	[self.tableView transitRowAtIndexPath:fromIndexPath toRowIndexPath:toIndexPath];
+}
+
+- (void)moveCellInfo:(YXCellInfo *)cellInfo toSectionInfo:(YXSectionInfo *)sectionInfo atIndex:(NSUInteger)index {
+    NSIndexPath *cellIndexPath = [self indexPathForSection:cellInfo.sectionInfo cellInfo:cellInfo];
+    
+    NSIndexPath *targetIndexPath = [NSIndexPath indexPathForRow:index inSection:[self.sections indexOfObject:sectionInfo]];
+    
+    [self.tableView moveRowAtIndexPath:cellIndexPath toIndexPath:targetIndexPath];
+}
+
+- (void)exchangeCellInfo:(YXCellInfo *)cellInfo1 withCellInfo:(YXCellInfo *)cellInfo2 {
+    [self.tableView exchangeRowAtIndexPath:[self indexPathForSection:cellInfo1.sectionInfo cellInfo:cellInfo1]
+                        withRowAtIndexPath:[self indexPathForSection:cellInfo2.sectionInfo cellInfo:cellInfo2]];
 }
 
 #pragma mark Reloading Rows

@@ -96,6 +96,10 @@ YXTableViewExtendedDelegate> {
  */
 - (void)transitCellInfo:(YXCellInfo *)fromCellInfo toCellInfo:(YXCellInfo *)toCellInfo;
 
+- (void)moveCellInfo:(YXCellInfo *)cellInfo toSectionInfo:(YXSectionInfo *)sectionInfo atIndex:(NSUInteger)index;
+
+- (void)exchangeCellInfo:(YXCellInfo *)cellInfo1 withCellInfo:(YXCellInfo *)cellInfo2;
+
 /**
  Attempts to find specified YXCellInfo object in sections' children. If such object can't be found, does nothing.
  @param cellInfo YXCellInfo object whose related UITableViewCell should be updated.

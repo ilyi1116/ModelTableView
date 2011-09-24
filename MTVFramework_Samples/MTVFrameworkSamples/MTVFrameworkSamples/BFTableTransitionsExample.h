@@ -6,8 +6,10 @@
 //  Copyright (c) 2011 Yandex. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "YXModelTableViewFramework.h"
 
-@interface BFTableTransitionsExample : UIViewController
+@interface BFTableTransitionsExample : YXModelTableViewController {
+    
+}
 
 @end

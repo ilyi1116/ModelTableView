@@ -67,6 +67,7 @@
 		E9C4B59E142C49590040DAF6 /* YXTitleValue2CellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C4B581142C49590040DAF6 /* YXTitleValue2CellInfo.m */; };
 		E9C4B59F142C49590040DAF6 /* YXTitleValueCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C4B583142C49590040DAF6 /* YXTitleValueCellInfo.m */; };
 		E9C4B5A2142C4A610040DAF6 /* MTVFramework.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E9C4B5A1142C4A610040DAF6 /* MTVFramework.bundle */; };
+		E9C4B5A9142C53AA0040DAF6 /* BFTableTransitionsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C4B5A7142C53AA0040DAF6 /* BFTableTransitionsExample.m */; };
 		E9D8739B137C186E00F8B515 /* BFNetworkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8739A137C186E00F8B515 /* BFNetworkInfoViewController.m */; };
 		E9FFD2411393C2380030E7A9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFD1D11393C0CB0030E7A9 /* CoreData.framework */; };
 		E9FFD2421393C23C0030E7A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFD1D51393C0D30030E7A9 /* SystemConfiguration.framework */; };
@@ -162,7 +163,7 @@
 		E9C4B56B142C49590040DAF6 /* YXModelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXModelTableViewController.h; path = ../../MTVFramework/YXModelTableViewController.h; sourceTree = "<group>"; };
 		E9C4B56C142C49590040DAF6 /* YXModelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXModelTableViewController.m; path = ../../MTVFramework/YXModelTableViewController.m; sourceTree = "<group>"; };
 		E9C4B56D142C49590040DAF6 /* YXModelTableViewFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXModelTableViewFramework.h; path = ../../MTVFramework/YXModelTableViewFramework.h; sourceTree = "<group>"; };
-		E9C4B56E142C49590040DAF6 /* YXSectionInfoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; name = YXSectionInfoDelegate.h; path = ../../MTVFramework/YXSectionInfoDelegate.h; sourceTree = "<group>"; };
+		E9C4B56E142C49590040DAF6 /* YXSectionInfoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXSectionInfoDelegate.h; path = ../../MTVFramework/YXSectionInfoDelegate.h; sourceTree = "<group>"; };
 		E9C4B56F142C49590040DAF6 /* YXSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXSectionInfo.h; path = ../../MTVFramework/YXSectionInfo.h; sourceTree = "<group>"; };
 		E9C4B570142C49590040DAF6 /* YXSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXSectionInfo.m; path = ../../MTVFramework/YXSectionInfo.m; sourceTree = "<group>"; };
 		E9C4B571142C49590040DAF6 /* YXSegmentedCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXSegmentedCellInfo.h; path = ../../MTVFramework/YXSegmentedCellInfo.h; sourceTree = "<group>"; };
@@ -185,6 +186,8 @@
 		E9C4B582142C49590040DAF6 /* YXTitleValueCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXTitleValueCellInfo.h; path = ../../MTVFramework/YXTitleValueCellInfo.h; sourceTree = "<group>"; };
 		E9C4B583142C49590040DAF6 /* YXTitleValueCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXTitleValueCellInfo.m; path = ../../MTVFramework/YXTitleValueCellInfo.m; sourceTree = "<group>"; };
 		E9C4B5A1142C4A610040DAF6 /* MTVFramework.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MTVFramework.bundle; path = ../../MTVFramework/MTVFramework.bundle; sourceTree = "<group>"; };
+		E9C4B5A6142C53AA0040DAF6 /* BFTableTransitionsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTableTransitionsExample.h; sourceTree = "<group>"; };
+		E9C4B5A7142C53AA0040DAF6 /* BFTableTransitionsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTableTransitionsExample.m; sourceTree = "<group>"; };
 		E9D87399137C186E00F8B515 /* BFNetworkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNetworkInfoViewController.h; sourceTree = "<group>"; };
 		E9D8739A137C186E00F8B515 /* BFNetworkInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNetworkInfoViewController.m; sourceTree = "<group>"; };
 		E9FFD1D11393C0CB0030E7A9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -233,6 +236,8 @@
 				E915DB07137D2E5200743EE9 /* MYCustomCellView.m */,
 				E915DB08137D2E5200743EE9 /* MYCustomCellView.xib */,
 				E915DB09137D2E5200743EE9 /* MYCustomCellViewDelegate.h */,
+				E9C4B5A6142C53AA0040DAF6 /* BFTableTransitionsExample.h */,
+				E9C4B5A7142C53AA0040DAF6 /* BFTableTransitionsExample.m */,
 			);
 			name = "Other examples";
 			sourceTree = "<group>";
@@ -535,6 +540,7 @@
 				E9C4B59D142C49590040DAF6 /* YXTitleSubtitleCellInfo.m in Sources */,
 				E9C4B59E142C49590040DAF6 /* YXTitleValue2CellInfo.m in Sources */,
 				E9C4B59F142C49590040DAF6 /* YXTitleValueCellInfo.m in Sources */,
+				E9C4B5A9142C53AA0040DAF6 /* BFTableTransitionsExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
