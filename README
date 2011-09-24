@@ -1,0 +1,24 @@
+Model Table View Framework
+=================
+
+
+This framework allows you to easily deal with UITableView, directly manipulating with it's cells and not thinking about any delegation protocols.
+The aim of this framework is to simplify creation of Settings screens, details view controllers, etc.
+To get profit you just have to subclass YXModelTableViewController and set it's sections (with YXSectionInfo objects).
+Cells are represented by YXCellInfo abstract class and it's subclasses:
+ * YXButtonCellInfo - button cell with a title
+ * YXSwitchCellInfo and YXKVOSwitchCellInfo - cell with UISwitch object inside
+ * YXTitleValueCellInfo and YXKVOTitleValueCellInfo - cell with UITableViewCellStyleValue1 style
+ * YXDisclosureCellInfo - cell with a disclosure indicator accessory
+ * YXDetailDisclosureCellInfo - cell with disclosure indicator accessory and UITableViewCellStyleValue1 style
+ * YXDisclosureButtonCellInfo - cell with disclosure button accessory view
+ * YXCheckmarkCellInfo - cell with a checkmark accessory
+ * YXCheckmarkCellGroupInfo and YXKVOCheckmarkCellGroupInfo - object that allows to group several YXCheckmarkCellInfo objects so only one of them can be in checked state. Please note that both group objects use YXCheckmarkCellInfo objects to manipulate, not YXKVOCheckmarkCellInfo!
+ * YXKVOCheckmarkCellInfo - cell with a checkmark accessory that binds to a specific keyPath of given object.
+ * YXSegmentedCellInfo and YXKVOSegmentedCellInfo - cell with a segmented control inside
+ * YXTextFieldCellInfo - cell with editable text field
+ * YXCustomCellInfo - custom cell which view you need to provide yourself
+
+Some cells supports Target-Action variant of interaction, others works using KVO mechanisms.
+This framework also supports animations (inserting, removing sections, cells) and also custom special kind of animations - transitions, available to all users of this framework for free since iOS 3. These transitions allows to move (probably like in iOS 5), transit (exclusive!) and exchange (exclusive too!) particular cells with each other.  
+
